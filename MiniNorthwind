@@ -1,0 +1,136 @@
+group: MiniNorthwind
+
+Customer = 
+{
+	CustomerID:string, CompanyName:string, City:string, Country:string,	Phone:string
+	'ALFKI', 'Alfreds Futterkiste', 'Berlin',	'Germany', '030-0074321'
+	'ANATR', 'Ana Trujillo Emparedados y helados', 'México D.F.',	'Mexico',	'(5) 555-4729'
+	'ANTON', 'Antonio Moreno Taquería',	'México D.F.',	'Mexico',	'(5) 555-3932'
+	'AROUT', 'Around the Horn',	'London',	'UK',	'(171) 555-7788'
+	'BERGS', 'Berglunds snabbköp',	'Luleå',	'Sweden',	'0921-12 34 65'
+	'BLAUS', 'Blauer See Delikatessen',	'Mannheim',	'Germany',	'0621-08460'
+	'BLONP', 'Blondesddsl père et fils',	'Strasbourg',	'France',	'88.60.15.31'
+	'BOLID', 'Bólido Comidas preparadas',	'Madrid',	'Spain', '(91) 555 22 82'
+	'BONAP', 'Bon app',	'Marseille',	'France',	'91.24.45.40'
+	'BOTTM', 'Bottom-Dollar Markets',	'Tsawassen',	'Canada',	'(604) 555-4729'
+	'BSBEV', "B's Beverages",	'London',	'UK',	'(171) 555-1212'
+	'CACTU', 'Cactus Comidas para llevar',	'Buenos Aires',	'Argentina',	'(1) 135-5555'
+	'CENTC', 'Centro comercial Moctezuma',	'México D.F.',	'Mexico',	'(5) 555-3392'
+	'CHOPS', 'Chop-suey Chinese',	'Bern',	'Switzerland',	'0452-076545'
+	'COMMI', 'Comércio Mineiro',	'Sao Paulo',	'Brazil',	'(11) 555-7647'
+}
+
+Order =
+{
+	OrderID:number,	CustomerID:string,	OrderDate:string,	ShipVia:number,	Freight:number
+	"10265"	"BLONP"	"35271"	"1"	"55.28"
+	"10278"	"BERGS"	"35289"	"2"	"92.69"
+	"10280"	"BERGS"	"35291"	"1"	"8.98"
+	"10289"	"BSBEV"	"35303"	"3"	"22.77"
+	"10297"	"BLONP"	"35312"	"2"	"5.74"
+	"10308"	"ANATR"	"35326"	"3"	"1.61"
+	"10326"	"BOLID"	"35348"	"2"	"77.92"
+	"10331"	"BONAP"	"35354"	"1"	"10.19"
+	"10340"	"BONAP"	"35367"	"3"	"166.31"
+	"10355"	"AROUT"	"35384"	"1"	"41.95"
+	"10360"	"BLONP"	"35391"	"3"	"131.7"
+	"10362"	"BONAP"	"35394"	"1"	"96.04"
+	"10365"	"ANTON"	"35396"	"2"	"22"
+	"10383"	"AROUT"	"35415"	"3"	"34.24"
+	"10384"	"BERGS"	"35415"	"3"	"168.64"
+}
+
+Shipper = 
+{
+	ShipperID:number,	CompanyName:string,	Phone:string
+	"1"	"Speedy Express"	"(503) 555-9831"
+	"2"	"United Package"	"(503) 555-3199"
+	"3"	"Federal Shipping"	"(503) 555-9931"
+}
+
+Category =
+{
+	CategoryID:number,	CategoryName:string,	Description:string
+	"1"	"Beverages"	"Soft drinks, coffees, teas, beers, and ales"
+	"2"	"Condiments"	"Sweet and savory sauces, relishes, spreads, and seasonings"
+	"3"	"Confections"	"Desserts, candies, and sweet breads"
+	"4"	"Dairy Products"	"Cheeses"
+	"5"	"Grains/Cereals"	"Breads, crackers, pasta, and cereal"
+	"6"	"Meat/Poultry"	"Prepared meats"
+	"7"	"Produce"	"Dried fruit and bean curd"
+	"8"	"Seafood"	"Seaweed and fish"
+}
+
+Products =
+{
+	ProductID:number,	ProductName:string,	CategoryID:number,	UnitPrice:number,	UnitsInStock:number
+	"3"	"Aniseed Syrup"	"2"	"10"	"13"
+	"6"	"Grandma's Boysenberry Spread"	"2"	"25"	"120"
+	"11"	"Queso Cabrales"	"4"	"21"	"22"
+	"13"	"Konbu"	"8"	"6"	"24"
+	"14"	"Tofu"	"7"	"23.25"	"35"
+	"17"	"Alice Mutton"	"6"	"39"	"0"
+	"19"	"Teatime Chocolate Biscuits"	"3"	"9.2"	"25"
+	"26"	"Gumbär Gummibärchen"	"3"	"31.23"	"15"
+	"28"	"Rössle Sauerkraut"	"7"	"45.6"	"26"
+	"32"	"Mascarpone Fabioli"	"4"	"32"	"9"
+	"33"	"Geitost"	"4"	"2.5"	"112"
+	"34"	"Sasquatch Ale"	"1"	"14"	"111"
+	"39"	"Chartreuse verte"	"1"	"18"	"69"
+	"40"	"Boston Crab Meat"	"8"	"18.4"	"123"
+	"42"	"Singaporean Hokkien Fried Mee"	"5"	"14"	"26"
+	"43"	"Ipoh Coffee"	"1"	"46"	"17"
+	"46"	"Spegesild"	"8"	"12"	"95"
+	"48"	"Chocolade"	"3"	"12.75"	"15"
+	"53"	"Perth Pasties"	"6"	"32.8"	"0"
+	"57"	"Ravioli Angelo"	"5"	"19.5"	"36"
+	"58"	"Escargots de Bourgogne"	"8"	"13.25"	"62"
+	"59"	"Raclette Courdavault"	"4"	"55"	"79"
+	"60"	"Camembert Pierrot"	"4"	"34"	"19"
+	"63"	"Vegie-spread"	"2"	"43.9"	"24"
+	"69"	"Gudbrandsdalsost"	"4"	"36"	"26"
+	"70"	"Outback Lager"	"1"	"15"	"15"
+	"71"	"Flotemysost"	"4"	"21.5"	"26"
+	"72"	"Mozzarella di Giovanni"	"4"	"34.8"	"14"
+	"76"	"Lakkalikööri"	"1"	"18"	"57"
+	"77"	"Original Frankfurter grüne Soße"	"2"	"13"	"32"
+}
+
+OrderDetail =
+{
+	OrderID:number,	ProductID:number,	UnitPrice:number,	Quantity:number,	Discount:number
+	"10643"	"28"	"45.60"	"15"	"0.25"
+	"10643"	"39"	"18.00"	"21"	"0.25"
+	"10643"	"46"	"12.00"	"2"	"0.25"
+	"10692"	"63"	"43.90"	"20"	"0"
+	"10702"	"3"	"10.00"	"6"	"0"
+	"10702"	"76"	"18.00"	"15"	"0"
+	"10835"	"59"	"55.00"	"15"	"0"
+	"10835"	"77"	"13.00"	"2"	"0.2"
+	"10952"	"6"	"25.00"	"16"	"0.05"
+	"10952"	"28"	"45.60"	"2"	"0"
+	"11011"	"58"	"13.25"	"40"	"0.05"
+	"11011"	"71"	"21.50"	"20"	"0"
+	"10308"	"69"	"28.80"	"1"	"0"
+	"10308"	"70"	"12.00"	"5"	"0"
+	"10625"	"14"	"23.25"	"3"	"0"
+	"10625"	"42"	"14.00"	"5"	"0"
+	"10625"	"60"	"34.00"	"10"	"0"
+	"10759"	"32"	"32.00"	"10"	"0"
+	"10926"	"11"	"21.00"	"2"	"0"
+	"10926"	"13"	"6.00"	"10"	"0"
+	"10926"	"19"	"9.20"	"7"	"0"
+	"10926"	"72"	"34.80"	"10"	"0"
+	"10365"	"11"	"16.80"	"24"	"0"
+	"10507"	"43"	"46.00"	"15"	"0.15"
+	"10507"	"48"	"12.75"	"15"	"0.15"
+	"10535"	"11"	"21.00"	"50"	"0.1"
+	"10535"	"40"	"18.40"	"10"	"0.1"
+	"10535"	"57"	"19.50"	"5"	"0.1"
+	"10535"	"59"	"55.00"	"15"	"0.1"
+	"10573"	"17"	"39.00"	"18"	"0"
+	"10573"	"34"	"14.00"	"40"	"0"
+	"10573"	"53"	"32.80"	"25"	"0"
+	"10677"	"26"	"31.23"	"30"	"0.15"
+	"10677"	"33"	"2.50"	"8"	"0.15"
+}
